@@ -58,7 +58,13 @@ alcali-file-managed-service-running:
     - source: salt://alcali/files/alcali.service.jinja
     - template: jinja
   module.run:
+{% if salt["config.get"]("use_superseded") %}  
+    - service.systemctl_reload:
+{% elif salt['salt_version.greater_than']("3005") %}
+    - service.systemctl_reload:
+{% else %}
     - name: service.systemctl_reload
+{% endif %}
     - onchanges:
       - file: alcali-file-managed-service-running
 
