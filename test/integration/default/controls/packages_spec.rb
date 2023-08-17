@@ -1,8 +1,12 @@
+# frozen_string_literal: true
+
 # Overide by OS
-package_name = 'bash'
-if os[:name] == 'centos' and os[:release].start_with?('6')
-  package_name = 'cronie'
-end
+package_name =
+  if os[:name] == 'centos' && os[:release].start_with?('6')
+    'cronie'
+  else
+    'bash'
+  end
 
 control 'alcali package' do
   title 'should be installed'

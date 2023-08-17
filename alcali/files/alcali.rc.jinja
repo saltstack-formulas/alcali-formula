@@ -13,12 +13,12 @@
 name="alcali"
 rcvar=alcali_enable
 pidfile="{{ directory }}/alcali.pid"
-alcali_user={{ user }}
-alcali_group={{ group }}
-alcali_chdir={{ directory }}/code
-alcali_env_file={{ directory }}/.env
+alcali_user={{ user }}
+alcali_group={{ group }}
+alcali_chdir={{ directory }}/code
+alcali_env_file={{ directory }}/.env
 procname={{ directory }}/.venv/bin/python
 command={{ directory }}/.venv/bin/gunicorn
-command_args="{{ name }} --daemon -p ${pidfile} --bind {{ host }}:{{ port }} -w {{ workers }} -t {{ timeout }}"
+command_args="{{ name }} --daemon -p ${pidfile} --bind {{ host }}:{{ port }} -w {{ workers }} -t {{ timeout }}"
 load_rc_config ${name}
 run_rc_command "$1"

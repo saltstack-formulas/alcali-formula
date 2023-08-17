@@ -8,7 +8,7 @@ alcali:
   deploy:
     repository: https://github.com/latenighttales/alcali.git
     rev: v3003.1.0  # You can specify branch or tag
-    force_reset: False
+    force_reset: false
     user: alcali
     group: alcali
     directory: /opt/alcali
@@ -17,8 +17,8 @@ alcali:
     name: 'config.wsgi:application'
     host: '0.0.0.0'
     port: 5000
-    workers: {{ grains['num_cpus'] }}
-    timeout: 300
+    workers: 4
+
   # All the items under this section will be converted into an environment file.
   config:
     allowed_hosts: '*'
@@ -58,4 +58,3 @@ alcali:
     # auth_ldap_user_attr_map_first_name: givenName
     # auth_ldap_user_attr_map_last_name: sn
     # auth_ldap_user_attr_map_email: mail
-

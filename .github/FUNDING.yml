@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+---
 # These are supported funding model platforms
 
 github: mattLLVW
