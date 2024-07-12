@@ -28,10 +28,10 @@ alcali-package-clean-pkg-removed:
 
 alcali-package-clean-git-latest-file-absent:
   file.absent:
-    -name: {{ alcali.deploy.directory }}/code
+    - name: {{ alcali.deploy.directory }}/code
 
 alcali-package-clean-virtualenv-absent:
   file.absent:
-    -name: {{ alcali.deploy.directory }}/.venv
+    - name: {{ alcali.deploy.directory }}/.venv
 
 
