@@ -6,7 +6,7 @@ alcali:
     name: alcali
     init_delay: null  # Gunicorn may take some delay to pop, adjust here
   deploy:
-    repository: https://github.com/latenighttales/alcali.git
+    repository: https://github.com/saltstack-formulas/alcali-formula
     rev: v3003.1.0  # You can specify branch or tag
     force_reset: False
     user: alcali
